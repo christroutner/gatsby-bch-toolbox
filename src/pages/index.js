@@ -12,6 +12,7 @@ import pic03 from '../assets/images/pic03.jpg'
 import pic04 from '../assets/images/pic04.jpg'
 import pic05 from '../assets/images/pic05.jpg'
 import pic06 from '../assets/images/pic06.jpg'
+import restInABox from '../assets/images/rest-in-a-box.jpg'
 
 class HomeIndex extends React.Component {
   render() {
@@ -21,7 +22,10 @@ class HomeIndex extends React.Component {
           title="BitcoinCash JavaScript Toolbox"
           meta={[
             { name: 'description', content: 'BitcoinCash JavaScript Toolbox' },
-            { name: 'keywords', content: 'bitcoin, bitcoin cash, bch, javascript, docker' },
+            {
+              name: 'keywords',
+              content: 'bitcoin, bitcoin cash, bch, javascript, docker',
+            },
           ]}
         />
 
@@ -39,7 +43,7 @@ class HomeIndex extends React.Component {
               </div>
             </div>
             <div className="col-6">
-              <header className="major" style={{ padding: '20px' }}>
+              <div style={{ padding: '20px' }}>
                 <h2>Bitcoin Cash JavaScript Toolbox</h2>
                 <ul>
                   <li>4 TB, USB 3.0, Portable Hard Drive</li>
@@ -56,25 +60,206 @@ class HomeIndex extends React.Component {
                   </li>
                 </ul>
                 <br />
-                <center><b>Cost</b>: $200</center>
-              </header>
+                <center>
+                  <button>Buy with BCH: $200</button>
+                </center>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid-wrapper" style={{ padding: '50px' }}>
+            <div className="col-12">
+              <h2>What's on the disk?</h2>
+              <p>
+                The disk contains the following Bitcoin Cash infrastructure.
+                Full nodes and indexers are synced at least once every three
+                months.
+                Links below are to the GitHub
+                repositories. Each repository contains the Docker container
+                or node.js
+                software installed on the disk, used to run each subcomponent.
+              </p>
+              <ul>
+                <li>
+                  <h3>Full Nodes</h3>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://github.com/christroutner/docker-abc"
+                        target="_blank"
+                      >
+                        ABC
+                      </a> - The original BCH implimentation client that started
+                      the Bitcoin Cash fork.
+                    </li>
+                    <li>
+                      <a href="https://github.com/gcash/bchd" target="_blank">
+                        BCHD
+                      </a>{' '}
+                      (coming soon) - A new BCH full node implemenation written
+                      in Go. Also possesses indexing capabilities.
+                    </li>
+                    <li>
+                      <a
+                        href="https://github.com/bcoin-org/bcash"
+                        target="_blank"
+                      >
+                        bcash
+                      </a>{' '}
+                      (coming soon) - A new BCH full node implementation writen
+                      in JavaScript for node.js. Also possesses indexing capabilities.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>Indexers</h3>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://github.com/christroutner/docker-bitcore-node"
+                        target="_blank"
+                      >
+                        Bitcore Node
+                      </a> - Maintained Bitpay, this is a rebranded version of Insight
+                      API. Written in Typescript, uses MongoDB.
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://github.com/christroutner/docker-ubuntu-blockbook"
+                        target="_blank"
+                      >
+                        Blockbook
+                      </a> - Maintained by Trezor. This is the same API used by
+                      their wallet hardware. Written in Go.
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://github.com/christroutner/docker-slpdb"
+                        target="_blank"
+                      >
+                        SLPDB
+                      </a> - Written in Typescript and uses MongoDB. Indexes and
+                      validates SLP token transactions.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>REST APIs</h3>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://github.com/Bitcoin-com/rest.bitcoin.com"
+                        target="_blank"
+                      >
+                        rest.bitcoin.com
+                      </a> - Written in Typescript. The original REST API allowing
+                      web and mobile apps to interface with the BCH blockchain.
+                      Developed and managed by Bitcoin.com.
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://github.com/christroutner/bch-api"
+                        target="_blank"
+                      >
+                        bch-api
+                      </a> - a fork of rest.bitcoin.com. Simplified and refactored
+                      in JavaScript.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>BCH JS Libraries</h3>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://github.com/Bitcoin-com/bitbox-sdk"
+                        target="_blank"
+                      >
+                        BITBOX SDK
+                      </a> - An npm library, written in Typescript and maintained
+                      by Bitcoin.com to compliment their rest.bitcoin.com API
+                      and cloud services.
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://github.com/christroutner/bitbox-js"
+                        target="_blank"
+                      >
+                        BITBOX JS
+                      </a> - A fork of BITBOX SDK, refactored to JavaScript.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>Example BCH Applications</h3>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://github.com/Bitcoin-com/bch-cli-wallet"
+                        target="_blank"
+                      >
+                        bch-cli-wallet
+                      </a> - Both an npm library and command-line application
+                      with HD wallet. Easy to use as a
+                      stand-alone wallet, or it can be included in your next
+                      JavaScript app to instantly give it wallet capabilities.
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://github.com/christroutner/tip-bch"
+                        target="_blank"
+                      >
+                        tip-bch
+                      </a> - Tipping management app. Easily fund QR codes to
+                      give paper or digitial 'tips'. Tipped funds can be recalled
+                      if they are not claimed. A risk-free way to on-board
+                      the crypto-curious.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
 
           <div className="grid-wrapper" style={{ padding: '50px' }}>
             <div className="col-6">
               <center>
-                <button>Buy with Badger Wallet</button>
+                <img src={restInABox} alt="" style={{ width: '100%'}} />
               </center>
             </div>
 
             <div className="col-6">
+              <h2>REST API In A Box</h2>
+              <p>
+                Need a plug-and-play solution? This mini-pc is preconfigured to
+                run all of the above infrastructure. Plug in power and an
+                ethernet cable. That's all you need! No setup required.
+                Specs on the PC:
+              </p>
+              <ul>
+                <li>OS: Ubuntu 18.04 LTS</li>
+                <li>Processor: Quad-core Intel i3</li>
+                <li>Memory: 32 GB DDR4 RAM</li>
+                <li>Drive: 120GB SSD internal, 4TB external</li>
+                <li>All infrustrcture starts at boot. All available
+                over <a href="#">TCP ports listed here</a></li>
+              </ul>
+
+              <br />
               <center>
-                <button>Buy with Paypal</button>
+                <button>Buy with BCH: $1,000</button>
               </center>
             </div>
           </div>
-
         </div>
       </Layout>
     )
