@@ -144,6 +144,16 @@ class HomeIndex extends React.Component {
                       </a> - Written in Typescript and uses MongoDB. Indexes and
                       validates SLP token transactions.
                     </li>
+
+                    <li>
+                      <a
+                        href="https://github.com/christroutner/insight-docker"
+                        target="_blank"
+                      >
+                        Insight API
+                      </a> - An older, deprecated version of Bitcore Node used
+                      by rest.bitcoin.com and BITBOX.
+                    </li>
                   </ul>
                 </li>
 
@@ -167,8 +177,9 @@ class HomeIndex extends React.Component {
                         target="_blank"
                       >
                         bch-api
-                      </a> - a fork of rest.bitcoin.com. Simplified and refactored
-                      in JavaScript.
+                      </a> - a fork of rest.bitcoin.com. Refactored
+                      in JavaScript, and expanded to use Bitcore and Blockbook
+                      APIs.
                     </li>
                   </ul>
                 </li>
@@ -189,11 +200,12 @@ class HomeIndex extends React.Component {
 
                     <li>
                       <a
-                        href="https://github.com/christroutner/bitbox-js"
+                        href="https://github.com/christroutner/bch-js"
                         target="_blank"
                       >
-                        BITBOX JS
+                        BCH JS
                       </a> - A fork of BITBOX SDK, refactored to JavaScript.
+                      Includes endpoints for working with Blockbook and Bitcore.
                     </li>
                   </ul>
                 </li>
