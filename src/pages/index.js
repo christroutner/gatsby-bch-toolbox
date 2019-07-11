@@ -45,6 +45,13 @@ class HomeIndex extends React.Component {
             <div className="col-6">
               <div style={{ padding: '20px' }}>
                 <h2>Bitcoin Cash JavaScript Toolbox</h2>
+                <p>
+                  The Toolbox is a portable hard drive containing fully synced
+                  indexers and fulled nodes. It contains all the open source
+                  infrastructure needed by web and mobile developers to build
+                  moderns apps capable of interacting with the Bitcoin Cash
+                  blockchain.
+                </p>
                 <ul>
                   <li>4 TB, USB 3.0, Portable Hard Drive</li>
                   <li>
