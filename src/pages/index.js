@@ -47,10 +47,10 @@ class HomeIndex extends React.Component {
                 <h2>Bitcoin Cash JavaScript Toolbox</h2>
                 <p>
                   The Toolbox is a portable hard drive containing fully synced
-                  indexers and fulled nodes. It contains all the open source
+                  indexers and full-nodes. It contains all the open source
                   infrastructure needed by web and mobile developers to build
-                  moderns apps capable of interacting with the Bitcoin Cash
-                  blockchain.
+                  moderns apps capable of interacting directly with the Bitcoin
+                  Cash blockchain.
                 </p>
                 <ul>
                   <li>4 TB, USB 3.0, Portable Hard Drive</li>
@@ -65,10 +65,13 @@ class HomeIndex extends React.Component {
                   <li>
                     Docker containers for easy deployment and customization.
                   </li>
+                  <li>
+                    <b>Cost:</b> $200 USD
+                  </li>
                 </ul>
                 <br />
                 <center>
-                  <button>Buy with BCH: $200</button>
+                  <button>Learn More</button>
                 </center>
               </div>
             </div>
@@ -80,11 +83,13 @@ class HomeIndex extends React.Component {
               <p>
                 The disk contains the following Bitcoin Cash infrastructure.
                 Full nodes and indexers are synced at least once every three
-                months.
+                months, allowing for minmal time spent synchronizating after
+                you recieve it.
                 Links below are to the GitHub
                 repositories. Each repository contains the Docker container
                 or node.js
-                software installed on the disk, used to run each subcomponent.
+                software installed on the disk, used to run each layer of the
+                stack.
               </p>
               <ul>
                 <li>
@@ -97,7 +102,7 @@ class HomeIndex extends React.Component {
                       >
                         ABC
                       </a> - The original BCH implimentation client that started
-                      the Bitcoin Cash fork.
+                      Bitcoin Cash.
                     </li>
                     <li>
                       <a href="https://github.com/gcash/bchd" target="_blank">
@@ -128,7 +133,9 @@ class HomeIndex extends React.Component {
                         target="_blank"
                       >
                         Bitcore Node
-                      </a> - Maintained Bitpay, this is a rebranded version of Insight
+                      </a> - Maintained
+                      by <a href="https://bitpay.com/" target="_blank">Bitpay</a>, this
+                      is a rebranded version of Insight
                       API. Written in Typescript, uses MongoDB.
                     </li>
 
@@ -138,7 +145,9 @@ class HomeIndex extends React.Component {
                         target="_blank"
                       >
                         Blockbook
-                      </a> - Maintained by Trezor. This is the same API used by
+                      </a> - Maintained
+                      by <a href="https://trezor.io/" target="_blank">Trezor</a>. This
+                      is the same API used by
                       their wallet hardware. Written in Go.
                     </li>
 
@@ -270,12 +279,13 @@ class HomeIndex extends React.Component {
                 <li>Memory: 32 GB DDR4 RAM</li>
                 <li>Drive: 120GB SSD internal, 4TB external</li>
                 <li>All infrustrcture starts at boot. All available
-                over <a href="#">TCP ports listed here</a></li>
+                over <a href="/port-list">TCP ports listed here</a></li>
+                <li><b>Cost:</b> $1,000 USD</li>
               </ul>
 
               <br />
               <center>
-                <button>Buy with BCH: $1,000</button>
+                <button>Learn More</button>
               </center>
             </div>
           </div>
