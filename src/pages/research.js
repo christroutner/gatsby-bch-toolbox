@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import LinkList from '../components/research/link-list'
+import LinkList from '../components/link-list'
 
 import pic11 from '../assets/images/research-header.jpg'
 

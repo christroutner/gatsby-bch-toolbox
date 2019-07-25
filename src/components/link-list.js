@@ -4,7 +4,7 @@
 */
 
 import React from 'react'
-import PostLink from '../post-link'
+import PostLink from './post-link'
 import { StaticQuery, graphql } from 'gatsby'
 import Collapsible from 'react-collapsible'
 import { Link } from 'gatsby'
