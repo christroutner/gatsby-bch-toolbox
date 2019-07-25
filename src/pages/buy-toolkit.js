@@ -45,7 +45,7 @@ const Generic = props => (
                 <b>Note:</b> This hard drive is formatted using the <i>ext4</i>{' '}
                 filesystem. It is only readable by the Linux operating system.
                 Windows and Mac will not recognize this file format by default.
-                <a href="#">Check out the FAQ</a> for software to read this format
+                {' '}<a href="/faq">Check out the FAQ</a> for software to read this format
                 if you are using those operating systems.
               </p>
               <p>
@@ -62,9 +62,9 @@ const Generic = props => (
           </div>
 
           <p>
-            Fill out the form below to order your own drive. Ensure you have
-            <a href="https://badger.bitcoin.com" target="_blank">Badger Wallet</a>
-            installed in your browser and at least $200 worth of Bitcoin Cash
+            Fill out the form below to order your own drive. Ensure you
+            have <a href="https://badger.bitcoin.com" target="_blank">Badger Wallet</a> installed
+            in your browser and at least $200 worth of Bitcoin Cash
             loaded in the wallet. Alternatively, a QR code will appear after
             you submit the code, and you can pay by sending the Bitcoin Cash
             to that address.
