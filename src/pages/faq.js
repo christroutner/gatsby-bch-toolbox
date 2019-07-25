@@ -25,6 +25,27 @@ faqContent.push('An intelligent question.')
 const trigger1 = `⊳ ${faqTitles[0]}`
 const trigger2 = `↴ ${faqTitles[0]}`
 
+const renderFaqs = () => {
+  return faqTitles.map((title, index) => {
+    //var trigger1 = `⊳ ${title}`
+    //var trigger2 = `↴ ${title}`
+
+    return (
+      <StyledCollapsible key={title}>
+        <Collapsible
+          key={title}
+          trigger={title}
+          triggerWhenOpen={title}
+          triggerTagName="h3"
+          triggerStyle={{ margin: 0 }}
+        >
+        <p>{faqContent[index]}</p>
+        </Collapsible>
+      </StyledCollapsible>
+    )
+  })
+}
+
 const Generic = props => (
   <Layout>
     <Helmet>
@@ -53,18 +74,7 @@ const Generic = props => (
           </p>
 
 
-
-          <StyledCollapsible key="disk-space">
-            <Collapsible
-              key="disk-space"
-              trigger={trigger1}
-              triggerWhenOpen={trigger2}
-              triggerTagName="h3"
-              triggerStyle={{margin: 0}}
-              >
-              <p>{faqContent[0]}</p>
-            </Collapsible>
-          </StyledCollapsible>
+          {renderFaqs()}
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
