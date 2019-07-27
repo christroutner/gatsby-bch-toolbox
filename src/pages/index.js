@@ -32,13 +32,13 @@ class HomeIndex extends React.Component {
         <div id="main">
           <div className="grid-wrapper">
             <div className="col-6">
-              <div class="youtube-responsive-container">
+              <div className="youtube-responsive-container">
                 <iframe
                   title="Bitcoin Cash JavaScript Toolbox"
                   src="https://www.youtube.com/embed/8w0CpQ8oydA"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 />
               </div>
             </div>

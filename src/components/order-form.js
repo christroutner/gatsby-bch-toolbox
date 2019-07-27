@@ -15,7 +15,7 @@ import spinningBitcoin from '../assets/images/spinning-bitcoin.gif'
 
 const SERVER = `http://localhost:5001`
 //const SERVER = ``
-const RECV_ADDR = 'bitcoincash:qpgusltsseyslth9azccyxel5gne2257fq0p9q2nkj'
+let RECV_ADDR = 'bitcoincash:qpgusltsseyslth9azccyxel5gne2257fq0p9q2nkj'
 
 import QR from '../assets/images/qr.png'
 
@@ -48,7 +48,7 @@ class OrderForm extends React.Component {
       name: '',
       email: '',
       mailingaddress: '',
-      message: '',
+      formMessage: '',
       usd2bch: 300.0,
       logStr: '',
       errStr: '',
@@ -56,6 +56,7 @@ class OrderForm extends React.Component {
       showPanel2: { display: 'none' },
       showPanel3: { display: 'none' },
       showPanel4: { display: 'none' },
+      bchAddr: ''
     }
   }
 
@@ -90,7 +91,7 @@ class OrderForm extends React.Component {
             <br />
             Message: (optional)
             <textarea
-              name="message"
+              name="formMessage"
               onChange={this.handleUpdate}
               placeholder=""
               rows="3"
@@ -168,15 +169,21 @@ class OrderForm extends React.Component {
 
       const validInput = _this.validateForm(_this.state)
 
-      await _this.getAddress()
+      const bchAddr = await _this.getAddress()
+      RECV_ADDR = bchAddr
+      console.log(`Payment will be sent to ${bchAddr}`)
 
-      //_this.invokeBadger()
+      _this.setState(prevState => ({
+        bchAddr: bchAddr
+      }))
+
+      _this.invokeBadger()
 
       //_this.submitOrderFormData()
     } catch (err) {
       // Display the error on the DOM.
       _this.setState(prevState => ({
-        message: err.message,
+        message: `Error while trying to process order: ${err.message}`,
       }))
     }
   }
@@ -231,6 +238,8 @@ class OrderForm extends React.Component {
 
         //window.open('https://badgerwallet.cash')
 
+        _this.submitOrderFormData()
+
         // Hide  the 1st panel and show the second.
         _this.setState(prevState => ({
           showPanel1: { display: 'none' },
@@ -251,13 +260,22 @@ class OrderForm extends React.Component {
   // The server then validates the TXID and creates the token.
   async submitOrderFormData(txid) {
     try {
-      const token = _this.state
-      token.txid = txid
+
+      console.log(`Entered submitOrderFormData(). txid: ${txid}`)
+
+      const obj = {
+        txid: txid, // Set if Badger Wallet is used.
+        bchAddr: _this.state.bchAddr,
+        name: _this.state.name,
+        email: _this.state.email,
+        mailingaddress: _this.state.mailingaddress,
+        formMessage: _this.state.formMessage
+      }
 
       const resp = await fetch(`${SERVER}/order/harddrive`, {
         method: 'POST',
         mode: 'cors',
-        body: JSON.stringify({ token }),
+        body: JSON.stringify({ obj }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -283,7 +301,7 @@ class OrderForm extends React.Component {
       throw new Error(`Mailing Address can not be empty`)
     }
 
-    const message = state.message
+    const message = state.formMessage
     if (!message || message === '') {
       throw new Error(`Message can not be empty`)
     }
@@ -305,8 +323,9 @@ class OrderForm extends React.Component {
       })
 
       const data = await resp.json()
+      //console.log(`data: ${JSON.stringify(data, null, 2)}`)
 
-      console.log(`data: ${JSON.stringify(data, null, 2)}`)
+      return data.address
     } catch (err) {
       console.log(`Error in getaddr(): `, err)
     }
