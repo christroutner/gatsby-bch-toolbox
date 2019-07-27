@@ -18,6 +18,9 @@ const SERVER = `http://localhost:5001`
 let RECV_ADDR = 'bitcoincash:qpgusltsseyslth9azccyxel5gne2257fq0p9q2nkj'
 
 import QR from '../assets/images/qr.png'
+//<img src={QR} alt="" />
+
+import QRCode from 'qrcode.react'
 
 const StyledButton = styled.a`
   margin: 10px;
@@ -124,7 +127,11 @@ class OrderForm extends React.Component {
             <h2>
               Please send payment to this BCH address to complete your order.
             </h2>
-            <img src={QR} alt="" />
+            <QRCode
+              value={RECV_ADDR}
+              size={256}
+              includeMargin={true}
+            />
             <p>{RECV_ADDR}</p>
           </center>
         </div>
