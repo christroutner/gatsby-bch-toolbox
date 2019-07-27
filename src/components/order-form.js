@@ -13,9 +13,11 @@ import { Link, navigate } from 'gatsby'
 //import BadgerButton from './badger-button'
 import spinningBitcoin from '../assets/images/spinning-bitcoin.gif'
 
-const SERVER = `http://localhost:5001`;
+const SERVER = `http://localhost:5001`
 //const SERVER = ``
 const RECV_ADDR = 'bitcoincash:qpgusltsseyslth9azccyxel5gne2257fq0p9q2nkj'
+
+import QR from '../assets/images/qr.png'
 
 const StyledButton = styled.a`
   margin: 10px;
@@ -50,10 +52,10 @@ class OrderForm extends React.Component {
       usd2bch: 300.0,
       logStr: '',
       errStr: '',
-      showPanel1: {display: 'inline'},
-      showPanel2: {display: 'none'},
-      showPanel3: {display: 'none'},
-      showPanel4: {display: 'none'}
+      showPanel1: { display: 'inline' },
+      showPanel2: { display: 'none' },
+      showPanel3: { display: 'none' },
+      showPanel4: { display: 'none' },
     }
   }
 
@@ -84,7 +86,7 @@ class OrderForm extends React.Component {
               onChange={this.handleUpdate}
               placeholder="123 Place St&#10;line 2&#10;City, OR 98015"
               rows="3"
-            / >
+            />
             <br />
             Message: (optional)
             <textarea
@@ -92,8 +94,7 @@ class OrderForm extends React.Component {
               onChange={this.handleUpdate}
               placeholder=""
               rows="3"
-            / >
-
+            />
             <br />
             <OutMsg>{this.state.message}</OutMsg>
             <br />
@@ -110,24 +111,21 @@ class OrderForm extends React.Component {
         </div>
 
         <div className="panel2" style={_this.state.showPanel2}>
-          <h2>Creating your tokens...</h2>
-          <img src={spinningBitcoin} />
+          <h2>Thank you!</h2>
+          <p>
+            Your order and payment was recieved. We will ship your order as soon
+            as a possible.
+          </p>
         </div>
 
         <div className="panel3" style={_this.state.showPanel3}>
-          <h2>Please print this data for your records</h2>
-          <p>
-            The information below contains a private key for the wallet that
-            controls the minting baton for your new token. This minting baton
-            will be needed if you want to create more tokens. Throw it away
-            if you want your token amount to be fixed forever.
-          </p>
-          <p>
-            Your new tokens should show up in your Badger Wallet in the next
-            few seconds.
-          </p>
-          <TextArea className="outputData" readOnly value={this.state.logStr}>
-          </TextArea>
+          <center>
+            <h2>
+              Please send payment to this BCH address to complete your order.
+            </h2>
+            <img src={QR} alt="" />
+            <p>{RECV_ADDR}</p>
+          </center>
         </div>
 
         <div className="panel4" style={_this.state.showPanel4}>
@@ -135,18 +133,15 @@ class OrderForm extends React.Component {
           <p>
             An error occured. Try reloading this page and trying again. If your
             wallet sent money and you need a refund, email the TXID for the
-            transaction to <a href="mailto:bengentle@mailbox.org">bengentle@mailbox.org</a>.
-            I will investigate the logs and refund payment to the sending address
+            transaction to{' '}
+            <a href="mailto:bengentle@mailbox.org">bengentle@mailbox.org</a>. I
+            will investigate the logs and refund payment to the sending address
             if I deem the issue was not due to user error.
           </p>
-          <p>
-            Please copy and paste the below information into the email:
-          </p>
-          <TextArea className="outputData" readOnly value={this.state.errStr}>
-          </TextArea>
+          <p>Please copy and paste the below information into the email:</p>
+          <TextArea className="outputData" readOnly value={this.state.errStr} />
         </div>
       </div>
-
     )
   }
 
@@ -167,15 +162,17 @@ class OrderForm extends React.Component {
     console.log(`Exchange rate: $${_this.state.usd2bch} per BCH`)
   }
 
-  clickPlaceOrder(event) {
+  async clickPlaceOrder(event) {
     try {
       event.preventDefault()
 
       const validInput = _this.validateForm(_this.state)
 
-      _this.invokeBadger()
+      await _this.getAddress()
 
-      //_this.submitTokenData()
+      //_this.invokeBadger()
+
+      //_this.submitOrderFormData()
     } catch (err) {
       // Display the error on the DOM.
       _this.setState(prevState => ({
@@ -221,16 +218,25 @@ class OrderForm extends React.Component {
 
           console.log(`Transaction sent! TXID: ${txid}`)
 
-          _this.submitTokenData(txid)
+          _this.submitOrderFormData(txid)
 
           // Hide  the 1st panel and show the second.
           _this.setState(prevState => ({
-            showPanel1: {display: 'none'},
-            showPanel2: {display: 'inline'},
+            showPanel1: { display: 'none' },
+            showPanel2: { display: 'inline' },
           }))
         })
       } else {
-        window.open('https://badgerwallet.cash')
+        // If Badger Wallet is not installed on the users web browser.
+
+        //window.open('https://badgerwallet.cash')
+
+        // Hide  the 1st panel and show the second.
+        _this.setState(prevState => ({
+          showPanel1: { display: 'none' },
+          showPanel2: { display: 'none' },
+          showPanel3: { display: 'inline' },
+        }))
       }
     } catch (err) {
       // Display the error on the DOM.
@@ -243,7 +249,7 @@ class OrderForm extends React.Component {
   // This function is called after a successful payment with Badger Wallet.
   // It submits the txid and token data to the server.
   // The server then validates the TXID and creates the token.
-  async submitTokenData(txid) {
+  async submitOrderFormData(txid) {
     try {
       const token = _this.state
       token.txid = txid
@@ -259,11 +265,9 @@ class OrderForm extends React.Component {
 
       const data = await resp.json()
 
-      console.log(`data: ${JSON.stringify(data,null,2)}`)
-
+      console.log(`data: ${JSON.stringify(data, null, 2)}`)
     } catch (err) {
-      console.log(`Error in submitTokenData(): `, err)
-
+      console.log(`Error in submitOrderFormData(): `, err)
     }
   }
 
@@ -287,13 +291,33 @@ class OrderForm extends React.Component {
     return state
   }
 
+  // Retrieves a new payment address from the back end.
+  async getAddress() {
+    try {
+
+      const resp = await fetch(`${SERVER}/order/addr`, {
+        method: 'GET',
+        mode: 'cors',
+        //body: JSON.stringify({ token }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+
+      const data = await resp.json()
+
+      console.log(`data: ${JSON.stringify(data, null, 2)}`)
+    } catch (err) {
+      console.log(`Error in getaddr(): `, err)
+    }
+  }
+
   // Reactive event handler updates state as user types in the form inputs.
   handleUpdate(event) {
     _this.setState({
       [event.target.name]: event.target.value,
     })
   }
-
 }
 
 export default OrderForm
