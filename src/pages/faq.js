@@ -18,14 +18,37 @@ const faqContent = []
 
 faqTitles.push('How can I open the disk in Windows or Mac OS?')
 faqContent.push(() => {
-  return(
-    <p>This is the collapsible content.</p>
+  return (
+    <div>
+      <p>
+        Reading of ext4 formatted drives is possible with the installation of a
+        plugin:
+      </p>
+      <ul>
+        <li>
+          <a
+            href="http://osxdaily.com/2014/03/20/mount-ext-linux-file-system-mac/"
+            target="_blank"
+          >
+            Mac OS{' '}
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.howtogeek.com/112888/3-ways-to-access-your-linux-partitions-from-windows/"
+            target="_blank"
+          >
+            Windows OS{' '}
+          </a>
+        </li>
+      </ul>
+    </div>
   )
 })
 
 faqTitles.push('What should I ask?')
 faqContent.push(() => {
-  return(<p>An intelligent question.</p>)
+  return <p>An intelligent question.</p>
 })
 
 const renderFaqs = () => {
@@ -42,8 +65,7 @@ const renderFaqs = () => {
           triggerTagName="h3"
           triggerStyle={{ margin: 0 }}
         >
-        {faqContent[index]()}
-
+          {faqContent[index]()}
         </Collapsible>
       </StyledCollapsible>
     )
@@ -68,7 +90,6 @@ const Generic = props => (
           </span>
 
           {renderFaqs()}
-
         </div>
       </section>
     </div>
