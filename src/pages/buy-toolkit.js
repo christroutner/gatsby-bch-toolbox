@@ -66,7 +66,7 @@ const Generic = props => (
             have <a href="https://badger.bitcoin.com" target="_blank">Badger Wallet</a> installed
             in your browser and at least $200 worth of Bitcoin Cash
             loaded in the wallet. Alternatively, a QR code will appear after
-            you submit the code, and you can pay by sending the Bitcoin Cash
+            you submit the form, and you can pay by sending the Bitcoin Cash
             to that address.
           </p>
           <OrderForm />

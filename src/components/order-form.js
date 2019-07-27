@@ -13,7 +13,7 @@ import { Link, navigate } from 'gatsby'
 //import BadgerButton from './badger-button'
 import spinningBitcoin from '../assets/images/spinning-bitcoin.gif'
 
-const SERVER = `http://localhost:5000`;
+const SERVER = `http://localhost:5001`;
 //const SERVER = ``
 const RECV_ADDR = 'bitcoincash:qpgusltsseyslth9azccyxel5gne2257fq0p9q2nkj'
 
@@ -101,7 +101,7 @@ class OrderForm extends React.Component {
               href="#"
               className="button special badger-button"
               //onClick={this.invokeBadger}
-              onClick={this.clickCreateToken}
+              onClick={this.clickPlaceOrder}
               data-to="bitcoincash:qzl6k0wvdd5ky99hewghqdgfj2jhcpqnfq8xtct0al"
             >
               Place Order
@@ -167,7 +167,7 @@ class OrderForm extends React.Component {
     console.log(`Exchange rate: $${_this.state.usd2bch} per BCH`)
   }
 
-  clickCreateToken(event) {
+  clickPlaceOrder(event) {
     try {
       event.preventDefault()
 
@@ -248,7 +248,7 @@ class OrderForm extends React.Component {
       const token = _this.state
       token.txid = txid
 
-      const resp = await fetch(`${SERVER}/token`, {
+      const resp = await fetch(`${SERVER}/order/harddrive`, {
         method: 'POST',
         mode: 'cors',
         body: JSON.stringify({ token }),
@@ -259,29 +259,11 @@ class OrderForm extends React.Component {
 
       const data = await resp.json()
 
-      // Display last panel and the log data
-      _this.setState(prevState => ({
-        logStr: JSON.stringify(data,null,2),
-        showPanel2: {display: 'none'},
-        showPanel3: {display: 'inline'}
-      }))
+      console.log(`data: ${JSON.stringify(data,null,2)}`)
+
     } catch (err) {
-      debugger
       console.log(`Error in submitTokenData(): `, err)
-      const thisErr = err
 
-      // Hide  the 1st panel and show the second.
-      _this.setState(prevState => ({
-        showPanel2: {display: 'none'},
-        showPanel4: {display: 'inline'},
-        errStr: `
-txid: ${_this.state.txid}
-
-error: ${err.message}
-        `
-      }))
-
-      //throw err
     }
   }
 
