@@ -13,7 +13,7 @@ import { Link, navigate } from 'gatsby'
 //import BadgerButton from './badger-button'
 import spinningBitcoin from '../assets/images/spinning-bitcoin.gif'
 
-const SERVER = `http://localhost:5101`
+const SERVER = `https://bchjs.cash:5101`
 //const SERVER = ``
 let RECV_ADDR = 'bitcoincash:qpgusltsseyslth9azccyxel5gne2257fq0p9q2nkj'
 
