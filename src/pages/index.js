@@ -71,7 +71,8 @@ class HomeIndex extends React.Component {
                 </ul>
                 <br />
                 <center>
-                  <button>Learn More</button>
+                  <button className="button" onClick={this.learnMoreButton} style={{ margin: '20px' }}>Learn More</button>
+                  <button className="button special" onClick={this.buyButton} style={{ margin: '20px' }}>Buy Now</button>
                 </center>
               </div>
             </div>
@@ -285,13 +286,25 @@ class HomeIndex extends React.Component {
 
               <br />
               <center>
-                <button>Learn More</button>
+                <button className="button" onClick={this.learnMoreButton2} style={{ margin: '20px' }}>Learn More</button>
               </center>
             </div>
           </div>
         </div>
       </Layout>
     )
+  }
+
+  buyButton() {
+    window.location.href = '/buy-toolkit'
+  }
+
+  learnMoreButton() {
+    window.location.href = '/toolkit-info'
+  }
+
+  learnMoreButton2() {
+    window.location.href = '/server-info'
   }
 }
 
