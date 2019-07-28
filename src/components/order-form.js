@@ -40,6 +40,8 @@ const TextArea = styled.textarea`
 
 let _this
 
+const DEFAULT_BCH_PRICE = 300.0
+
 class OrderForm extends React.Component {
   constructor(props) {
     super(props)
@@ -52,14 +54,15 @@ class OrderForm extends React.Component {
       email: '',
       mailingaddress: '',
       formMessage: '',
-      usd2bch: 300.0,
+      usd2bch: DEFAULT_BCH_PRICE,
       logStr: '',
       errStr: '',
       showPanel1: { display: 'inline' },
       showPanel2: { display: 'none' },
       showPanel3: { display: 'none' },
       showPanel4: { display: 'none' },
-      bchAddr: ''
+      bchAddr: '',
+      bchPrice: 200/DEFAULT_BCH_PRICE
     }
   }
 
@@ -127,8 +130,11 @@ class OrderForm extends React.Component {
             <h2>
               Please send payment to this BCH address to complete your order.
             </h2>
+            <p>
+              Send <u><b>{_this.state.bchPrice} BCH</b></u> to the address below.
+            </p>
             <QRCode
-              value={RECV_ADDR}
+              value={`${RECV_ADDR}?amount=${_this.state.bchPrice}`}
               size={256}
               includeMargin={true}
             />
@@ -164,10 +170,20 @@ class OrderForm extends React.Component {
     )
     const body = await resp.json()
 
+    const price = Number(body.data.rates.USD)
+
+    //let bchPrice = Math.floor((200/price*100000000)/100000000)
+    let bchPrice = 200/price
+    bchPrice = Math.floor(bchPrice*100000000)/100000000
+
     _this.setState(prevState => ({
-      usd2bch: Number(body.data.rates.USD),
+      usd2bch: price,
+      bchPrice: bchPrice
     }))
-    console.log(`Exchange rate: $${_this.state.usd2bch} per BCH`)
+
+    //console.log(`Exchange rate: $${_this.state.usd2bch} per BCH`)
+    console.log(`Exchange rate: $${price} per BCH`)
+    console.log(`$200 = ${bchPrice} BCH`)
   }
 
   async clickPlaceOrder(event) {
