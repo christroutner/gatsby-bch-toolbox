@@ -13,11 +13,12 @@ import { Link, navigate } from 'gatsby'
 //import BadgerButton from './badger-button'
 import spinningBitcoin from '../assets/images/spinning-bitcoin.gif'
 
-const SERVER = `https://bchjs.cash:5101`
+const SERVER = `https://bchjs.cash/api`
 //const SERVER = ``
 let RECV_ADDR = 'bitcoincash:qpgusltsseyslth9azccyxel5gne2257fq0p9q2nkj'
 
 import QR from '../assets/images/qr.png'
+import BadQR from '../assets/images/bad-price.png'
 //<img src={QR} alt="" />
 
 import QRCode from 'qrcode.react'
@@ -62,7 +63,8 @@ class OrderForm extends React.Component {
       showPanel3: { display: 'none' },
       showPanel4: { display: 'none' },
       bchAddr: '',
-      bchPrice: 200/DEFAULT_BCH_PRICE
+      //bchPrice: 200/DEFAULT_BCH_PRICE
+      bchPrice: null,
     }
   }
 
@@ -131,14 +133,13 @@ class OrderForm extends React.Component {
               Please send payment to this BCH address to complete your order.
             </h2>
             <p>
-              Send <u><b>{_this.state.bchPrice} BCH</b></u> to the address below.
+              Send{' '}
+              <u>
+                <b>{_this.state.bchPrice} BCH</b>
+              </u>{' '}
+              to the address below.
             </p>
-            <QRCode
-              value={`${RECV_ADDR}?amount=${_this.state.bchPrice}`}
-              size={256}
-              includeMargin={true}
-            />
-            <p>{RECV_ADDR}</p>
+            {_this.generateQR()}
           </center>
         </div>
 
@@ -159,26 +160,47 @@ class OrderForm extends React.Component {
     )
   }
 
+  generateQR() {
+    const bchPrice = _this.state.bchPrice
+    //const bchPrice = null
+    //console.log(`_this.state.bchPrice: ${bchPrice}`)
+
+    if (bchPrice) {
+      return (
+        <div>
+          <QRCode
+            value={`${RECV_ADDR}?amount=${bchPrice}`}
+            size={256}
+            includeMargin={true}
+          />
+          <p>{RECV_ADDR}</p>
+        </div>
+      )
+    } else {
+      return <img src={BadQR} alt="" />
+    }
+  }
+
   componentDidMount() {
     this.getExchangeRate()
   }
 
   // Pulls the latest exchange rate data from coinbase.
   async getExchangeRate() {
-    const resp = await fetch(
-      `https://api.coinbase.com/v2/exchange-rates?currency=BCH`
-    )
-    const body = await resp.json()
 
-    const price = Number(body.data.rates.USD)
+    const resp = await fetch(`${SERVER}/order/price`)
+    const body = await resp.json()
+    //console.log(`body: ${JSON.stringify(body,null,2)}`)
+
+    const price = Number(body.bchPrice)
 
     //let bchPrice = Math.floor((200/price*100000000)/100000000)
-    let bchPrice = 200/price
-    bchPrice = Math.floor(bchPrice*100000000)/100000000
+    let bchPrice = 200 / price
+    bchPrice = Math.floor(bchPrice * 100000000) / 100000000
 
     _this.setState(prevState => ({
       usd2bch: price,
-      bchPrice: bchPrice
+      bchPrice: bchPrice,
     }))
 
     //console.log(`Exchange rate: $${_this.state.usd2bch} per BCH`)
@@ -197,7 +219,7 @@ class OrderForm extends React.Component {
       console.log(`Payment will be sent to ${bchAddr}`)
 
       _this.setState(prevState => ({
-        bchAddr: bchAddr
+        bchAddr: bchAddr,
       }))
 
       _this.invokeBadger()
@@ -283,7 +305,6 @@ class OrderForm extends React.Component {
   // The server then validates the TXID and creates the token.
   async submitOrderFormData(txid) {
     try {
-
       console.log(`Entered submitOrderFormData(). txid: ${txid}`)
 
       const obj = {
@@ -292,7 +313,7 @@ class OrderForm extends React.Component {
         name: _this.state.name,
         email: _this.state.email,
         mailingaddress: _this.state.mailingaddress,
-        formMessage: _this.state.formMessage
+        formMessage: _this.state.formMessage,
       }
 
       const resp = await fetch(`${SERVER}/order/harddrive`, {
@@ -335,7 +356,6 @@ class OrderForm extends React.Component {
   // Retrieves a new payment address from the back end.
   async getAddress() {
     try {
-
       const resp = await fetch(`${SERVER}/order/addr`, {
         method: 'GET',
         mode: 'cors',
