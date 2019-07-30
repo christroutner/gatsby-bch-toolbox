@@ -52,16 +52,42 @@ class ToolkitInfo extends React.Component {
                     <b>Price: $200</b> in Bitcoin Cash (BCH).
                   </p>
                   <button onClick={this.buyButton}>Buy Now</button>
+                  <br />
+                  <br />
                 </div>
                 <div className="col-1" />
               </div>
 
               <div className="grid-wrapper">
-                <div className="col-12">
+                <div className="col-6">
+                  <h2>Navigating the Stack</h2>
                   <p>
-                    This page is under construction. More information will be
-                    added soon.
+                    The video discusses the two types of software stacks that
+                    can be constructed with the data in the Toolkit.
                   </p>
+                  <ul>
+                    <li>
+                      A replication of <a href="https://rest.bitcoin.com" target="_blank">
+                      rest.bitcoin.com</a>. (<a href="#">See Diagram</a>)
+                    </li>
+                    <li>
+                      <a href="https://github.com/christroutner/bch-api">bch-api</a> an
+                      alternative implementation of rest.bitcoin.com.
+                      (<a href="#">See Diagram</a>)
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="col-6">
+                  <div className="youtube-responsive-container">
+                    <iframe
+                      title="Bitcoin Cash JavaScript Toolbox"
+                      src="https://www.youtube.com/embed/NpEaa2P7qZI"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
               </div>
             </div>
