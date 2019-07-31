@@ -11,7 +11,7 @@ const directoryStructure = `
 │   └── mainnet
 │   └── testnet
 ├── indexers
-│   ├── insight # Insight API v3 used by rest.bitcoin.com
+│   ├── insight # Used by rest.bitcoin.com
 │   │   ├── mainnet
 │   │   ├── testnet
 │   ├── blockbook
@@ -26,6 +26,7 @@ const directoryStructure = `
 ├── rest-apis
 │   ├── bch-api
 │   ├── docker-rest.bitcoin.com
+├── bch-stack-monitor
 ├── libraries
 │   ├── bch-js
 │   ├── bitbox-sdk
@@ -120,7 +121,7 @@ class ToolkitInfo extends React.Component {
                   <div className="youtube-responsive-container">
                     <iframe
                       title="Bitcoin Cash JavaScript Toolbox"
-                      src="https://www.youtube.com/embed/NpEaa2P7qZI"
+                      src="https://www.youtube.com/embed/5FIhJ2GtbqI"
                       frameBorder="0"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
@@ -172,6 +173,7 @@ class ToolkitInfo extends React.Component {
                     <li>Full node</li>
                     <li>Indexers</li>
                     <li>REST API</li>
+                    <li>Stack monitor</li>
                   </ol>
 
                   <p>
