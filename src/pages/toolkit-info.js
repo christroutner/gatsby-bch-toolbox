@@ -72,7 +72,8 @@ class ToolkitInfo extends React.Component {
                     operating system. Windows and Mac will not recognize this
                     file format by default. <a href="/faq">Check out the FAQ</a>{' '}
                     for software to read this format if you are using those
-                    operating systems.
+                    operating systems. The software on it targets the Ubuntu 18.04
+                    Linux OS.
                   </p>
                   <center>
                     <p>

@@ -49,7 +49,7 @@ class HomeIndex extends React.Component {
                   The Toolbox is a portable hard drive containing fully synced
                   indexers and full-nodes. It contains all the open source
                   infrastructure needed by web and mobile developers to build
-                  moderns apps capable of interacting directly with the Bitcoin
+                  modern apps capable of interacting directly with the Bitcoin
                   Cash blockchain.
                 </p>
                 <ul>
@@ -89,8 +89,8 @@ class HomeIndex extends React.Component {
                 Links below are to the GitHub
                 repositories. Each repository contains the Docker container
                 or node.js
-                software installed on the disk, used to run each layer of the
-                stack.
+                software installed on the disk, used to run each layer
+                of <a href="/toolkit-info/">the stack</a>.
               </p>
               <ul>
                 <li>
@@ -104,14 +104,16 @@ class HomeIndex extends React.Component {
                         ABC
                       </a> - The original BCH implimentation client that started
                       Bitcoin Cash.
-                    </li>
+                    </li><br />
+
                     <li>
                       <a href="https://github.com/gcash/bchd" target="_blank">
                         BCHD
                       </a>{' '}
                       (coming soon) - A new BCH full node implemenation written
                       in Go. Also possesses indexing capabilities.
-                    </li>
+                    </li><br />
+
                     <li>
                       <a
                         href="https://github.com/bcoin-org/bcash"
@@ -138,7 +140,7 @@ class HomeIndex extends React.Component {
                       by <a href="https://bitpay.com/" target="_blank">Bitpay</a>, this
                       is a rebranded version of Insight
                       API. Written in Typescript, uses MongoDB.
-                    </li>
+                    </li><br />
 
                     <li>
                       <a
@@ -150,7 +152,7 @@ class HomeIndex extends React.Component {
                       by <a href="https://trezor.io/" target="_blank">Trezor</a>. This
                       is the same API used by
                       their wallet hardware. Written in Go.
-                    </li>
+                    </li><br />
 
                     <li>
                       <a
@@ -160,7 +162,7 @@ class HomeIndex extends React.Component {
                         SLPDB
                       </a> - Written in Typescript and uses MongoDB. Indexes and
                       validates SLP token transactions.
-                    </li>
+                    </li><br />
 
                     <li>
                       <a
@@ -186,7 +188,7 @@ class HomeIndex extends React.Component {
                       </a> - Written in Typescript. The original REST API allowing
                       web and mobile apps to interface with the BCH blockchain.
                       Developed and managed by Bitcoin.com.
-                    </li>
+                    </li><br />
 
                     <li>
                       <a
@@ -198,6 +200,7 @@ class HomeIndex extends React.Component {
                       in JavaScript, and expanded to use Bitcore and Blockbook
                       APIs.
                     </li>
+                    <br />
                   </ul>
                 </li>
 
@@ -211,9 +214,12 @@ class HomeIndex extends React.Component {
                       >
                         BITBOX SDK
                       </a> - An npm library, written in Typescript and maintained
-                      by Bitcoin.com to compliment their rest.bitcoin.com API
-                      and cloud services.
-                    </li>
+                      by Bitcoin.com. It provides high level abstraction to common
+                      use cases for working with the Bitcoin Cash blockchain.
+                      It also provides
+                      convenient JavaScript functions to interact with the
+                      rest.bitcoin.com API.
+                    </li><br />
 
                     <li>
                       <a
@@ -222,7 +228,8 @@ class HomeIndex extends React.Component {
                       >
                         BCH JS
                       </a> - A fork of BITBOX SDK, refactored to JavaScript.
-                      Includes endpoints for working with Blockbook and Bitcore.
+                      Includes endpoints for working with Blockbook and Bitcore,
+                      through bch-api REST API server.
                     </li>
                   </ul>
                 </li>
@@ -240,7 +247,7 @@ class HomeIndex extends React.Component {
                       with HD wallet. Easy to use as a
                       stand-alone wallet, or it can be included in your next
                       JavaScript app to instantly give it wallet capabilities.
-                    </li>
+                    </li><br />
 
                     <li>
                       <a
