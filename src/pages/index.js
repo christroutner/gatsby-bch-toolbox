@@ -140,6 +140,12 @@ class HomeIndex extends React.Component {
                       by <a href="https://bitpay.com/" target="_blank">Bitpay</a>, this
                       is a rebranded version of Insight
                       API. Written in Typescript, uses MongoDB.
+                      <ul>
+                        <li>
+                          <a href="https://github.com/bitpay/bitcore/blob/master/packages/bitcore-node/docs/api-documentation.md" target="_blank">
+                          API documentation</a>
+                        </li>
+                      </ul>
                     </li><br />
 
                     <li>
@@ -152,6 +158,12 @@ class HomeIndex extends React.Component {
                       by <a href="https://trezor.io/" target="_blank">Trezor</a>. This
                       is the same API used by
                       their wallet hardware. Written in Go.
+                      <ul>
+                        <li>
+                          <a href="https://github.com/trezor/blockbook/blob/master/docs/api.md" target="_blank">
+                          API documentation</a>
+                        </li>
+                      </ul>
                     </li><br />
 
                     <li>
@@ -162,6 +174,12 @@ class HomeIndex extends React.Component {
                         SLPDB
                       </a> - Written in Typescript and uses MongoDB. Indexes and
                       validates SLP token transactions.
+                      <ul>
+                        <li>
+                          <a href="https://docs.fountainhead.cash/docs/query_v3" target="_blank">
+                          SLPDB query documentation</a>
+                        </li>
+                      </ul>
                     </li><br />
 
                     <li>
@@ -188,7 +206,14 @@ class HomeIndex extends React.Component {
                       </a> - Written in Typescript. The original REST API allowing
                       web and mobile apps to interface with the BCH blockchain.
                       Developed and managed by Bitcoin.com.
-                    </li><br />
+                    </li>
+                    <ul>
+                      <li>
+                        <a href="https://developer.bitcoin.com/rest/docs/getting-started" target="_blank">
+                        API documentation</a>
+                      </li>
+                    </ul>
+                    <br />
 
                     <li>
                       <a
@@ -199,6 +224,12 @@ class HomeIndex extends React.Component {
                       </a> - a fork of rest.bitcoin.com. Refactored
                       in JavaScript, and expanded to use Bitcore and Blockbook
                       APIs.
+                      <ul>
+                        <li>
+                          <a href="https://bchjs.cash/bch-api/index.html" target="_blank">
+                          API documentation</a>
+                        </li>
+                      </ul>
                     </li>
                     <br />
                   </ul>
@@ -219,7 +250,14 @@ class HomeIndex extends React.Component {
                       It also provides
                       convenient JavaScript functions to interact with the
                       rest.bitcoin.com API.
-                    </li><br />
+                      <ul>
+                        <li>
+                          <a href="https://developer.bitcoin.com/bitbox/docs/getting-started" target="_blank">
+                          API documentation</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <br />
 
                     <li>
                       <a
@@ -230,6 +268,12 @@ class HomeIndex extends React.Component {
                       </a> - A fork of BITBOX SDK, refactored to JavaScript.
                       Includes endpoints for working with Blockbook and Bitcore,
                       through bch-api REST API server.
+                      <ul>
+                        <li>
+                          <a href="https://bchjs.cash/bch-js/index.html" target="_blank">
+                          API documentation</a>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </li>
