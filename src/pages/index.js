@@ -83,8 +83,8 @@ class HomeIndex extends React.Component {
               <h2>What's on the disk?</h2>
               <p>
                 The disk contains the following Bitcoin Cash infrastructure.
-                Full nodes and indexers are synced at least once every three
-                months, allowing for minmal time spent synchronizating after
+                Full nodes and indexers are synced and backed up once per
+                week, allowing for minmal time spent synchronizating after
                 you recieve it.
                 Links below are to the GitHub
                 repositories. Each repository contains the Docker container
@@ -104,25 +104,6 @@ class HomeIndex extends React.Component {
                         ABC
                       </a> - The original BCH implimentation client that started
                       Bitcoin Cash.
-                    </li><br />
-
-                    <li>
-                      <a href="https://github.com/gcash/bchd" target="_blank">
-                        BCHD
-                      </a>{' '}
-                      (coming soon) - A new BCH full node implemenation written
-                      in Go. Also possesses indexing capabilities.
-                    </li><br />
-
-                    <li>
-                      <a
-                        href="https://github.com/bcoin-org/bcash"
-                        target="_blank"
-                      >
-                        bcash
-                      </a>{' '}
-                      (coming soon) - A new BCH full node implementation writen
-                      in JavaScript for node.js. Also possesses indexing capabilities.
                     </li>
                   </ul>
                 </li>
@@ -264,7 +245,7 @@ class HomeIndex extends React.Component {
                         href="https://github.com/christroutner/bch-js"
                         target="_blank"
                       >
-                        BCH JS
+                        bch-js
                       </a> - A fork of BITBOX SDK, refactored to JavaScript.
                       Includes endpoints for working with Blockbook and Bitcore,
                       through bch-api REST API server.
@@ -332,7 +313,7 @@ class HomeIndex extends React.Component {
                 <li>Drive: 120GB SSD internal, 4TB external</li>
                 <li>All infrustrcture starts at boot. All available
                 over <a href="/port-list">TCP ports listed here</a></li>
-                <li><b>Cost:</b> $1,000 USD</li>
+                <li><b>Cost:</b> $1,500 USD</li>
               </ul>
 
               <br />
