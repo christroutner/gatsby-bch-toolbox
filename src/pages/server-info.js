@@ -53,7 +53,7 @@ class ToolkitInfo extends React.Component {
                     administration, you are encouraged to{' '}
                     <a href="/build-server/">build your own</a>. Otherwise, a
                     preconfigured, turn-key microserver is available for{' '}
-                    <a href="#">purchase</a>.
+                    <a href="/buy-server/">purchase</a>.
                   </p>
 
                   <center>
@@ -91,7 +91,7 @@ class ToolkitInfo extends React.Component {
   }
 
   buyButton() {
-    window.location.href = '/'
+    window.location.href = '/buy-server/'
   }
 
   buildButton() {
