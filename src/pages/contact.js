@@ -12,7 +12,7 @@ import harddrive from '../assets/images/hard-drive.jpg'
 const Generic = props => (
   <Layout>
     <Helmet>
-      <title>Buy Microserver</title>
+      <title>Buy Trout's Bitcoin Cash JavaScript Toolkit</title>
       <meta
         name="description"
         content="Buy Trout's Bitcoin Cash JavaScript Toolkit"
@@ -23,17 +23,14 @@ const Generic = props => (
       <section id="one">
         <div className="inner">
           <header className="major">
-            <h1>Buy the Microserver</h1>
+            <h1>Contact Us</h1>
           </header>
 
           <div className="grid-wrapper">
             <div className="col-12">
               <p>
-                Thank you for your interest in purchasing the microserver.
-                Fill out the form below to begin a dialog with us. We'll email
-                confirm your order, then send you a BCH address to
-                deposit funds. New orders typically take three to four weeks for
-                assembly and programming.
+                Fill out the form below to send an email to the organziation
+                running this website.
               </p>
             </div>
           </div>

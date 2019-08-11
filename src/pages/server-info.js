@@ -42,7 +42,6 @@ class ToolkitInfo extends React.Component {
                     synced to the network.
                   </p>
                   <p>
-
                     The microserver can be built from parts readily available on
                     Amazon.com. It runs all{' '}
                     <a href="/toolkit-info/">the networking software</a> which

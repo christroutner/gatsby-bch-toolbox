@@ -146,15 +146,9 @@ class OrderForm extends React.Component {
         <div className="panel4" style={_this.state.showPanel4}>
           <h2>Error!</h2>
           <p>
-            An error occured. Try reloading this page and trying again. If your
-            wallet sent money and you need a refund, email the TXID for the
-            transaction to{' '}
-            <a href="mailto:bengentle@mailbox.org">bengentle@mailbox.org</a>. I
-            will investigate the logs and refund payment to the sending address
-            if I deem the issue was not due to user error.
+            An error occured. Try reloading this page and trying again. If it
+            continues, please try again later.
           </p>
-          <p>Please copy and paste the below information into the email:</p>
-          <TextArea className="outputData" readOnly value={this.state.errStr} />
         </div>
       </div>
     )
@@ -187,7 +181,6 @@ class OrderForm extends React.Component {
 
   // Pulls the latest exchange rate data from coinbase.
   async getExchangeRate() {
-
     const resp = await fetch(`${SERVER}/order/price`)
     const body = await resp.json()
     //console.log(`body: ${JSON.stringify(body,null,2)}`)
