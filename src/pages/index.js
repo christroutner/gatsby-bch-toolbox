@@ -169,7 +169,7 @@ class HomeIndex extends React.Component {
                         target="_blank"
                       >
                         Insight API
-                      </a> - An older, deprecated version of Bitcore Node used
+                      </a> - An older, forked version of Bitcore Node used
                       by rest.bitcoin.com and BITBOX.
                     </li>
                   </ul>

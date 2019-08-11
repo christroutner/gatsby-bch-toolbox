@@ -109,7 +109,8 @@ const Generic = props => (
 
               <p>
                 The top-most layer, the 'Application' layer represents the web
-                or mobile application created by software developers, for end
+                or mobile application created <b>by</b> software
+                developers, <b>for</b> end
                 users. Application developers build on top of the stack of
                 infrasturcture below them, using the REST API and JavaScript
                 library. They abstract away the complexity of directly dealing

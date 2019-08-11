@@ -33,11 +33,24 @@ class ToolkitInfo extends React.Component {
                 </div>
                 <div className="col-6">
                   <p>
+                    <a href="/build-server/">This ASUS minicomputer</a> has been
+                    chosen as the reference implementation of the bch-api REST
+                    API. It has an excessive amount of RAM to handle all the
+                    applications making up <a href="/bch-api-stack/">the stack</a>.
+                    Because the <a href="/toolkit-info/">toolkit</a> comes pre-synced,
+                    the smaller processor is adequate to stay
+                    synced to the network.
+                  </p>
+                  <p>
+
                     The microserver can be built from parts readily available on
                     Amazon.com. It runs all{' '}
                     <a href="/toolkit-info/">the networking software</a> which
-                    makes up the rest.bitcoin.com stack as well as the bch-api
-                    stack. If you are skilled in Docker and Linux
+                    makes up
+                    the <a href="/rest-stack/">rest.bitcoin.com stack</a> as
+                    well as
+                    the <a href="/bch-api-stack/">bch-api stack</a>. If
+                    you are skilled in Docker and Linux
                     administration, you are encouraged to{' '}
                     <a href="/build-server/">build your own</a>. Otherwise, a
                     preconfigured, turn-key microserver is available for{' '}
