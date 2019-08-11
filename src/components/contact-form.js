@@ -11,8 +11,8 @@ import { Link, navigate } from 'gatsby'
 //import BadgerButton from './badger-button'
 import spinningBitcoin from '../assets/images/spinning-bitcoin.gif'
 
-//const SERVER = `https://bchjs.cash/api`
-const SERVER = `http://localhost:5101`
+const SERVER = `https://bchjs.cash/api`
+//const SERVER = `http://localhost:5101`
 
 const StyledButton = styled.a`
   margin: 10px;
