@@ -147,6 +147,11 @@ class ToolkitInfo extends React.Component {
                       capable of reading the data in the zip file.
                     </li>
                   </ul>
+
+                  The hard drive targets the Ubuntu 18.04 OS. The commands
+                  needed to install Docker and Docker Compose can be
+                  found <a href="https://troutsblog.com/research/dev-ops/overview" target="_blank">
+                  here</a>
                 </div>
                 <div className="col-6">
                   <pre style={{ whiteSpace: 'pre-wrap' }}>
