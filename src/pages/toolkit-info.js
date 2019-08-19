@@ -198,7 +198,7 @@ class ToolkitInfo extends React.Component {
                   <div className="youtube-responsive-container">
                     <iframe
                       title="Bitcoin Cash JavaScript Toolbox"
-                      src="https://www.youtube.com/embed/NpEaa2P7qZI"
+                      src="https://www.youtube.com/embed/2Z3OJ8Gvz50"
                       frameBorder="0"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
