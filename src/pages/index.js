@@ -19,9 +19,9 @@ class HomeIndex extends React.Component {
     return (
       <Layout>
         <Helmet
-          title="BitcoinCash JavaScript Toolbox"
+          title="BitcoinCash JavaScript Toolkit"
           meta={[
-            { name: 'description', content: 'BitcoinCash JavaScript Toolbox' },
+            { name: 'description', content: 'BitcoinCash JavaScript Toolkit' },
             {
               name: 'keywords',
               content: 'bitcoin, bitcoin cash, bch, javascript, docker',
@@ -34,7 +34,7 @@ class HomeIndex extends React.Component {
             <div className="col-6">
               <div className="youtube-responsive-container">
                 <iframe
-                  title="Bitcoin Cash JavaScript Toolbox"
+                  title="Bitcoin Cash JavaScript Toolkit"
                   src="https://www.youtube.com/embed/8w0CpQ8oydA"
                   frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -44,9 +44,9 @@ class HomeIndex extends React.Component {
             </div>
             <div className="col-6">
               <div style={{ padding: '20px' }}>
-                <h2>Bitcoin Cash JavaScript Toolbox</h2>
+                <h2>Bitcoin Cash JavaScript Toolkit</h2>
                 <p>
-                  The Toolbox is a portable hard drive containing fully synced
+                  The Toolkit is a portable hard drive containing fully synced
                   indexers and full-nodes. It contains all the open source
                   infrastructure needed by web and mobile developers to build
                   modern apps capable of interacting directly with the Bitcoin
