@@ -126,6 +126,10 @@ class HomeIndex extends React.Component {
                           <a href="https://github.com/bitpay/bitcore/blob/master/packages/bitcore-node/docs/api-documentation.md" target="_blank">
                           API documentation</a>
                         </li>
+                        <li>
+                          <a href="https://troutsblog.com/research/bitcore-node-insight-api" target="_blank">
+                          Research notes</a>
+                        </li>
                       </ul>
                     </li><br />
 
@@ -143,6 +147,10 @@ class HomeIndex extends React.Component {
                         <li>
                           <a href="https://github.com/trezor/blockbook/blob/master/docs/api.md" target="_blank">
                           API documentation</a>
+                        </li>
+                        <li>
+                          <a href="https://troutsblog.com/research/bitcoin-cash/blockbook" target="_blank">
+                          Research notes</a>
                         </li>
                       </ul>
                     </li><br />
@@ -236,6 +244,10 @@ class HomeIndex extends React.Component {
                           <a href="https://developer.bitcoin.com/bitbox/docs/getting-started" target="_blank">
                           API documentation</a>
                         </li>
+                        <li>
+                          <a href="https://github.com/Bitcoin-com/bitbox-sdk/tree/master/examples" target="_blank">
+                          Example code</a>
+                        </li>
                       </ul>
                     </li>
                     <br />
@@ -253,6 +265,10 @@ class HomeIndex extends React.Component {
                         <li>
                           <a href="https://bchjs.cash/bch-js/index.html" target="_blank">
                           API documentation</a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/christroutner/bch-js/tree/master/examples" target="_blank">
+                          Example code</a>
                         </li>
                       </ul>
                     </li>
