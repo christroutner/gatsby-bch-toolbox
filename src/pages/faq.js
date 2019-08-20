@@ -46,10 +46,10 @@ faqContent.push(() => {
   )
 })
 
-faqTitles.push('What should I ask?')
-faqContent.push(() => {
-  return <p>An intelligent question.</p>
-})
+//faqTitles.push('What should I ask?')
+//faqContent.push(() => {
+//  return <p>An intelligent question.</p>
+//})
 
 const renderFaqs = () => {
   return faqTitles.map((title, index) => {

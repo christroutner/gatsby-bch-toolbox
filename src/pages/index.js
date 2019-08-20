@@ -19,9 +19,9 @@ class HomeIndex extends React.Component {
     return (
       <Layout>
         <Helmet
-          title="BitcoinCash JavaScript Toolkit"
+          title="Bitcoin Cash JavaScript Toolkit"
           meta={[
-            { name: 'description', content: 'BitcoinCash JavaScript Toolkit' },
+            { name: 'description', content: 'Bitcoin Cash JavaScript Toolkit' },
             {
               name: 'keywords',
               content: 'bitcoin, bitcoin cash, bch, javascript, docker',
@@ -83,8 +83,8 @@ class HomeIndex extends React.Component {
               <h2>What's on the disk?</h2>
               <p>
                 The disk contains the following Bitcoin Cash infrastructure.
-                Full nodes and indexers are synced and backed up once per
-                week, allowing for minmal time spent synchronizating after
+                Full nodes and indexers are synced and backed up every two
+                weeks, allowing for minmal time spent synchronizating after
                 you recieve it.
                 Links below are to the GitHub
                 repositories. Each repository contains the Docker container

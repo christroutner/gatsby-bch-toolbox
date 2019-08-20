@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 
 const Header = (props) => (
     <header id="header" className="alt">
-        <Link to="/" className="logo"><strong>BCH</strong> <span>JavaScript Toolbox</span></Link>
+        <Link to="/" className="logo"><strong>BCH</strong> <span>JavaScript Toolkit</span></Link>
     </header>
 )
 
