@@ -248,6 +248,10 @@ class HomeIndex extends React.Component {
                           <a href="https://github.com/Bitcoin-com/bitbox-sdk/tree/master/examples" target="_blank">
                           Example code</a>
                         </li>
+                        <li>
+                          <a href="https://github.com/christroutner/bchjs-get-started">
+                          Node.js app template</a>
+                        </li>
                       </ul>
                     </li>
                     <br />
