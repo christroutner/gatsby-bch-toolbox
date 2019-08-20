@@ -229,7 +229,7 @@ class OrderForm extends React.Component {
   // Invokes Badger Wallet with a transaction for paying for the token creation.
   invokeBadger() {
     try {
-      const USD_TO_SEND = 0.02
+      const USD_TO_SEND = 200.0
       const SATS_PER_BCH = 100000000
       let sats = Math.floor((USD_TO_SEND * SATS_PER_BCH) / _this.state.usd2bch)
       console.log(`Sending ${sats} BCH`)
